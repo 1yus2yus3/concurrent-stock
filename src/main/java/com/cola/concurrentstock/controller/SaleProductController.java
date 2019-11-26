@@ -16,8 +16,8 @@ public class SaleProductController {
     @PostMapping("db/commitProductOrder")
     public ProductOrder commitProductOrder(@RequestParam(required = false,defaultValue = "2") Long productId){
 
-        //ProductOrder order = productOrderDBService.commitProductOrder(productId);
+        ProductOrder order = productOrderDBService.commitProductOrder(productId);
 
-        return null;
+        return order;
     }
 }

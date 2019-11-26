@@ -12,6 +12,6 @@ public class ProductStock {
     @TableField("product_name")
     private String productName;
     private Integer stock;
-    //@Version
+    @Version
     private Integer versionNo;
 }

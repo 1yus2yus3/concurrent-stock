@@ -7,11 +7,13 @@ spring:
     name: concurrent-stock
 
   datasource:
-    driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://39.108.239.82:3306/concurrent-stock
-    username: root
-    password: uAiqwVwjJ8-i
-
+    driver-class-name: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://39.108.239.82:3306/concurrent-stock
+#    username: root
+#    password: uAiqwVwjJ8-i
+    url: jdbc:mysql://10.128.1.11:3306/concurrent-stock?serverTimezone=Asia/Shanghai&useUnicode=true&useSSL=false
+    username: developer
+    password: esoo5X^Xc&nq5^MF
 
 
 #mybatis
@@ -51,3 +53,9 @@ logback:
   logDir: log/dev
   appName: concurrent-stock
   fileType: log
+
+  #logging
+  # 打印mybatis的SQL
+logging:
+  level:
+    com.cola.concurrentstock.base.mapper: INFO
