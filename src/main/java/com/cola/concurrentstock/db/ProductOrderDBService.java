@@ -6,6 +6,8 @@ public interface ProductOrderDBService {
 
     ProductOrder commitProductOrder(Long productId);
 
+    ProductOrder commitProductOrder1(Long productId);
+
     ProductOrder commitProductOrder2(Long productId);
 
     ProductOrder commitProductOrder3(Long productId);

@@ -16,7 +16,30 @@ public class SaleProductController {
     @PostMapping("db/commitProductOrder")
     public ProductOrder commitProductOrder(@RequestParam(required = false,defaultValue = "2") Long productId){
 
-        ProductOrder order = productOrderDBService.commitProductOrder(productId);
+        synchronized (this) {
+            ProductOrder order = productOrderDBService.commitProductOrder(productId);
+            return order;
+        }
+    }
+    @PostMapping("db/commitProductOrder1")
+    public ProductOrder commitProductOrder1(@RequestParam(required = false,defaultValue = "2") Long productId){
+
+        ProductOrder order = productOrderDBService.commitProductOrder1(productId);
+
+        return order;
+    }
+    @PostMapping("db/commitProductOrder2")
+    public ProductOrder commitProductOrder2(@RequestParam(required = false,defaultValue = "2") Long productId){
+
+        ProductOrder order = productOrderDBService.commitProductOrder2(productId);
+
+        return order;
+    }
+
+    @PostMapping("db/commitProductOrder3")
+    public ProductOrder commitProductOrder3(@RequestParam(required = false,defaultValue = "2") Long productId){
+
+        ProductOrder order = productOrderDBService.commitProductOrder3(productId);
 
         return order;
     }
