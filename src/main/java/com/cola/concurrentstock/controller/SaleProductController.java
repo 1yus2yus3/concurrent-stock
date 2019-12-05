@@ -21,34 +21,34 @@ public class SaleProductController {
     @PostMapping("db/commitProductOrder")
     public void commitProductOrder(@RequestParam(required = false,defaultValue = "2") Long productId){
 
-        //synchronized (this) {
+        synchronized (this) {
             productOrderDBService.commitProductOrder(productId);
-        //}
+        }
     }
     @PostMapping("db/commitProductOrder1")
-    public ProductOrder commitProductOrder1(@RequestParam(required = false,defaultValue = "2") Long productId){
+    public void commitProductOrder1(@RequestParam(required = false,defaultValue = "2") Long productId){
 
         try{
-            ProductOrder order = productOrderDBService.commitProductOrder1(productId);
-            return order;
+            productOrderDBService.commitProductOrder1(productId);
+            return ;
         }catch (Exception e){
             logger.error("异常：{}",e);
             throw new ApiException(e);
         }
     }
     @PostMapping("db/commitProductOrder2")
-    public ProductOrder commitProductOrder2(@RequestParam(required = false,defaultValue = "2") Long productId){
+    public void commitProductOrder2(@RequestParam(required = false,defaultValue = "2") Long productId){
 
-        ProductOrder order = productOrderDBService.commitProductOrder2(productId);
+        productOrderDBService.commitProductOrder2(productId);
 
-        return order;
+        return ;
     }
 
     @PostMapping("db/commitProductOrder3")
-    public ProductOrder commitProductOrder3(@RequestParam(required = false,defaultValue = "2") Long productId){
+    public void commitProductOrder3(@RequestParam(required = false,defaultValue = "2") Long productId){
 
-        ProductOrder order = productOrderDBService.commitProductOrder3(productId);
+        productOrderDBService.commitProductOrder3(productId);
 
-        return order;
+        return ;
     }
 }
