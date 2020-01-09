@@ -28,4 +28,11 @@ class ConcurrentStockApplicationTests {
             productStockMapper.insert(stock);
         }
     }
+
+
+
+    @Test
+    public void test(){
+
+    }
 }
